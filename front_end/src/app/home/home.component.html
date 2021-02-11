@@ -1,0 +1,24 @@
+<html>
+  <body class="body" style="background:#f6f5f7; margin-top: -20px;">
+<mat-grid-list class="content" cols="5" rowHeight="400px" gutterSize="5px" >
+  <mat-grid-tile *ngFor="let tile of tiles" >
+  <div class="content " style="padding: 10px; background-color: #FFFFFF; border-width: px; border-color: black;">
+    <img src="..\assets\Images\Farmer.jpg" alt="Mountains" class="crop-image">
+    <h5 class="text-center">{{tile.cropName | uppercase}}</h5>
+    <p>{{tile.cropType}}</p>
+    <p>INR {{tile.price}}</p>
+    <div>
+    <span style="float: left; width: 40%;">
+    <button class="form-control btn-success text-white form-group font-bolder" *ngIf="service.getUserLogged()">Edit</button>
+    </span>
+
+    <span style="float: right; width: 40%;" >
+    <button class="form-control btn-success text-white form-group font-bolder" *ngIf="service.getUserLogged()">Delete</button>
+    </span>
+</div>
+    <button class="form-control btn-success text-white form-group font-bolder" *ngIf="!service.getUserLogged()" (click)="buyCrop(tile)">Buy</button>
+  </div>
+ </mat-grid-tile>
+</mat-grid-list>
+  </body>
+</html>

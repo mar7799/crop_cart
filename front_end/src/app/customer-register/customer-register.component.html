@@ -1,0 +1,41 @@
+
+<div class ='container col-lg-4' style="margin-left: 500px; padding-right: 50px;">
+    <div class="jumbotron bg-dark  " >
+  <h3 class='text-center text-white '>
+     <i> Enter your Details</i>
+  </h3>
+  <div *ngIf='alert' class="alert alert-dark alert-dismissible">
+    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+    <strong>Registered Successsfull!</strong> 
+
+    
+    
+  </div>
+  <form #customerRegForm = "ngForm"  class='form-group' (ngSubmit)="registerCustomer(customerRegForm.value)"  >
+    <!-- <div class="text-white">
+      &nbsp;&nbsp;&nbsp;&nbsp;
+      <input class="form-check-input" type="radio" value="dog" 
+      [(ngModel)]="dog.value" name="gob" value="i" [checked]="true" >Farmer 
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <input type="radio" name="user" value="buyer" ngModel>Buyer
+    </div> -->
+
+      <input type='text' class='form-control' placeholder ='Enter FirstName'  name= "customerFirstName" ngModel ><br/>
+  
+      <input type='text' class='form-control' placeholder ='Enter LastName' name= "customerLastName" ngModel  ><br/>
+      
+      <input type='text' class='form-control' placeholder ='Enter Address'  name= "customerAddress"  ngModel><br/>
+  
+      <input type='text' class='form-control' placeholder ='Mobile' pattern='[789][0-9]{9}' required name= "mobile" ngModel ><br/>
+      
+    
+      <input type='text' class='form-control' placeholder ='Enter EmailId'  name= "customerEmailId" ngModel ><br/>
+     
+      <input type='password' class='form-control' placeholder ='Enter Password'  name= "password" ngModel ><br/>
+      <input type='password' class='form-control' placeholder ='Confirm password'  name= "password" ngModel ><br/>
+     
+      <button  class ='form-control bg-primary text-white form-group font-bolder' > Register</button>
+  
+  </form>
+  </div>
+</div>

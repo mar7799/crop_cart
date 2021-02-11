@@ -1,0 +1,99 @@
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+
+<nav class="navbar navbar-expand-lg " style="background:#ff4268;">
+  <a class="navbar-brand" style="color: white; font-weight: bold; font-size: 30px;" href="#">CropCart</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  
+  <div class="collapse navbar-collapse" id="navbarColor01">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active" >
+        <a class="nav-link" style="color: white; font-size: 20px;" routerLink="home">Home
+          <span class="sr-only">(current)</span>
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" style="color: white; font-size: 20px;" routerLink="registerCrop" *ngIf="service.getUserLogged() && !service.getBuyerLogged()">Crop Register</a>
+      </li>
+      
+      
+      <li class="nav-item">
+        <a class="nav-link" style="color: white; font-size: 20px;" routerLink="orders" *ngIf="service.getBuyerLogged() && !service.getUserLogged()">Orders</a>
+      </li>
+      
+       
+      
+      <!-- <li class="nav-item">
+        <a class="nav-link text-white" routerLink="employees">ShowAllEmployee</a>
+      </li>  
+      <li class="nav-item">
+        <a class="nav-link text-white" routerLink="empbyid">ShowEmployeeByID</a>
+      </li> -->
+    </ul>
+       
+    <form class="form-inline my-2 my-xl-0 nav navbar-nav navbar-right">
+      <input class="form-control my-xl-2" type="text" placeholder="Search">
+      <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button> &nbsp; &nbsp;
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown" style="color: white; font-size: 20px;" href="#" role="button" aria-haspopup="true" aria-expanded="false">Language</a>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="#">English</a>
+          <a class="dropdown-item" href="#">Hindi</a>
+        </div>
+      </li>
+      <!-- <li class="nav-item">
+        <a class="nav-link " routerLink="login" >Farmer</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link " routerLink="registerCustomer" >Customer</a>
+      </li> -->
+      <!-- <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Login</a>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" *ngIf="!service.getUserLogged()" routerLink="login">Farmer Login</a>
+          <a class="dropdown-item" *ngIf="!service.getUserLogged()" href="#">Consumer Login</a>
+        </div>
+      </li>
+      
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"  style="width: 100px;" aria-expanded="false">Register</a>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" *ngIf="!service.getUserLogged()" routerLink="register">Farmer Register</a>
+          <a class="dropdown-item" *ngIf="!service.getUserLogged()" routerLink="registercustomer">Consumer Register</a>
+        </div>
+      </li> -->
+      <li class="nav-item">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+      <li class="nav-item">
+        <a class="nav-link" style="color: white; font-size: 20px;" *ngIf="!service.getUserLogged() && !service.getBuyerLogged()" routerLink="login">Farmer</a>
+      </li>
+      <li class="nav-item">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+      <li class="nav-item">
+        <a class="nav-link" style="color: white; font-size: 20px;" *ngIf="!service.getUserLogged() && !service.getBuyerLogged()"routerLink="register">Consumer</a>
+      </li>
+      <!-- <li class="nav-item">
+        <a class="nav-link" style="color: white; font-size: 20px;" routerLink="payment">payment</a>
+      </li> -->
+
+      <!-- <li class="nav-item">
+        <a class="nav-link" *ngIf="!service.getBuyerLogged()" routerLink="login">Farmer</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" *ngIf="!service.getBuyerLogged()"routerLink="register">Buyer</a>
+      </li> -->
+
+      
+      <li class="nav-item">
+        <a class="nav-link" style="color: white; font-size: 20px;" *ngIf="service.getUserLogged() || service.getBuyerLogged()" (click)="service.setUserLoggedOut()">View Profile</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" style="color: white; font-size: 20px;" *ngIf="service.getUserLogged() || service.getBuyerLogged()" (click)="service.setUserLoggedOut()"  (click)="service.setBuyerLoggedOut()">Logout</a>
+      </li>
+
+      
+    </form>
+  </div>
+</nav>

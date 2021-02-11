@@ -1,0 +1,44 @@
+<div class="bg-img">
+    <form class="container"#cropRegForm="ngForm" (ngSubmit)="registerCrop(cropRegForm.value)">
+        <h3 class="text-center">Enter Crop Details</h3>
+        <label for="cropName">Crop Name</label><br/>
+            <input type="text"   class="form-group"  Placeholder="Crop Name" name="cropName" ngModel><br/>
+            <label for="cropType">Crop Type</label><br/>
+            <input type="text"   class="form-group"  Placeholder="Crop Type" name="cropType" ngModel><br/>
+            <label for="quantity">Crop Quantity</label><br/>
+            <input type="number" class="form-group"  Placeholder="Crop Quantity" name="cropQuantity" ngModel><br/>
+            <!-- <select type="text" class="form-group"  name="country" ngModel>
+            <option value={{country.alpha3Code}} *ngFor="let country of countryList">{{country.name}}</option>           
+            </select><br/> -->
+            <label for="place">Place</label><br/>
+            <input type="text"   class="form-group"  Placeholder="Place"    name="place" ngModel><br/>
+            <label for="price">Price</label><br/>
+            <input type="number" class="form-group"  Placeholder="Price"    name="price" ngModel><br/>
+            <button class='btn'>Add Crop</button>
+    </form>
+</div>
+
+<!-- <div class="container">
+    <div class="jumbotron">
+        <h3>
+            <i> Enter Crop Details </i>
+        </h3>
+        <form #cropRegForm="ngForm"  class="form-group" (ngSubmit)="registerCrop(cropRegForm.value)">
+            <label for="cropName">Crop Name:</label><br/>
+            <input type="text"   class="form-group"  Placeholder="Crop Name" name="cropName" ngModel><br/>
+            <label for="cropType">Crop Type</label><br/>
+            <input type="text"   class="form-group"  Placeholder="Crop Type" name="cropType" ngModel><br/>
+            <label for="quantity">Crop Quantity</label><br/>
+            <input type="number" class="form-group"  Placeholder="Crop Quantity" name="quantity" ngModel><br/>
+            <select type="text" class="form-group"  name="country" ngModel>
+            <option value={{country.alpha3Code}} *ngFor="let country of countryList">{{country.name}}</option>           
+            </select><br/>
+            <label for="place">Place</label><br/>
+            <input type="text"   class="form-group"  Placeholder="Place"    name="place" ngModel><br/>
+            <label for="price">Price</label><br/>
+            <input type="number" class="form-group"  Placeholder="Price"    name="price" ngModel><br/>
+            <button>Register</button>
+        </form>
+
+    </div>
+</div> -->
